@@ -1,0 +1,13 @@
+res://collectables/cherry.tscn::8d4c0883220716f2cc7e8108ed8901be::1723662226::res://.godot/exported/133200997/export-bc7c6fbcc329f1d0fd76c7de8eff5b79-cherry.scn
+res://collectables/gem.tscn::4a53085cf52403f2ebffb6dec684386f::1723662226::res://.godot/exported/133200997/export-d33fea322a73f865e36019e0f92faa99-gem.scn
+res://enemies/boss.tscn::06b05d3c8904c69f1e75c9515b08cb11::1723662226::res://.godot/exported/133200997/export-57413c1fa62b4984dd36ce7507e89f0e-boss.scn
+res://enemies/enemy.tscn::4530048d2916e1b6bbec44b3175209f9::1723648352::res://.godot/exported/133200997/export-c236662bf91a99b4edb6703cae1f6ca1-enemy.scn
+res://enemies/frog.tscn::de48c46249f922a71a5c50fb95c74467::1723662226::res://.godot/exported/133200997/export-e2485eab2b1d83eae8846f0d97742518-frog.scn
+res://enemies/toad.tscn::90558035412c055950ed40fbb0774fe0::1723662227::res://.godot/exported/133200997/export-a45856fcef91ba888998647343131594-toad.scn
+res://player/player.tscn::501bbc8ade62d94c2f3b8459dea36017::1723662225::res://.godot/exported/133200997/export-753d15e03e0182f9d550ac833b42bb41-player.scn
+res://worlds/after_boss.tscn::392c9a76f7b4bd0f2a44f166b8f05feb::1723662226::res://.godot/exported/133200997/export-ae269ba3771931cb39f9c0c79adfb0b2-after_boss.scn
+res://worlds/game_over.tscn::b8565580048fa7daaf21f3f6682a7296::1723662226::res://.godot/exported/133200997/export-ae6e444a6963ce888b9ee6c4c9123ea4-game_over.scn
+res://worlds/game_won.tscn::68b810fea90b31848554bcae2e8ab08b::1723662226::res://.godot/exported/133200997/export-c4f0ccb85c1be24a4c6288a62ea6d71b-game_won.scn
+res://worlds/main.tscn::9b8434e348cdd848ce0e44808c44aafd::1723662225::res://.godot/exported/133200997/export-ea8ff33680f68e756f98bd414459ce22-main.scn
+res://worlds/world.tscn::75af914465cfd345f6fbb2cb113cfe4b::1723662225::res://.godot/exported/133200997/export-887e4d780d140316a190f39dd83198a8-world.scn
+res://bg.tscn::75c7b0cfe298d6d5a5a77ff2af971fad::1723662226::res://.godot/exported/133200997/export-bba13d5cf0da78405995582cb41e9396-bg.scn

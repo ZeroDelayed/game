@@ -1,0 +1,14 @@
+ParallaxLayer
+ParallaxBackground
+Area2D
+CollisionShape2D
+AnimationPlayer
+AnimationTree
+AnimatedSprite2D
+CharacterBody2D
+Button
+TextEdit
+TileMap
+RichTextLabel
+HTTPRequest
+Label

@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=3 uid="uid://dlewcpudg8y8s"]
+
+[ext_resource type="Script" path="res://collectables/gem.gd" id="1_uffer"]
+[ext_resource type="Texture2D" uid="uid://xi14u8j8oy86" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/gem/gem-1.png" id="2_2e3xi"]
+[ext_resource type="Texture2D" uid="uid://cu1th5vbfxtvg" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/gem/gem-2.png" id="3_by1ig"]
+[ext_resource type="Texture2D" uid="uid://dp265ciugtwlq" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/gem/gem-3.png" id="4_ev18v"]
+[ext_resource type="Texture2D" uid="uid://dxibqpa824221" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/gem/gem-4.png" id="5_gi5im"]
+[ext_resource type="Texture2D" uid="uid://1p7jl1v4p1pj" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/gem/gem-5.png" id="6_qm6gy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gqs6s"]
+radius = 12.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fexej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2e3xi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_by1ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ev18v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gi5im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qm6gy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_jcqqe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_v8ols"]
+resource_name = "idle"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f7wt3"]
+_data = {
+"RESET": SubResource("Animation_jcqqe"),
+"idle": SubResource("Animation_v8ols")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1lym1"]
+radius = 844.254
+
+[node name="Gem" type="Area2D"]
+script = ExtResource("1_uffer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gqs6s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fexej")
+animation = &"idle"
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_f7wt3")
+}
+
+[node name="idle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="idle"]
+visible = false
+shape = SubResource("CircleShape2D_1lym1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="idle" to="." method="_on_idle_body_entered"]

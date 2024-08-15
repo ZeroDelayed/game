@@ -1,0 +1,120 @@
+[gd_scene load_steps=15 format=3 uid="uid://wbgpefs1wk13"]
+
+[ext_resource type="Texture2D" uid="uid://3jjv2fgo38gp" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/cherry/cherry-1.png" id="1_206o1"]
+[ext_resource type="Script" path="res://collectables/cherry.gd" id="1_mifkd"]
+[ext_resource type="Texture2D" uid="uid://b12yg6em410y5" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/cherry/cherry-2.png" id="2_2lmrw"]
+[ext_resource type="Texture2D" uid="uid://b8akpvyc1257l" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/cherry/cherry-3.png" id="3_vqdhd"]
+[ext_resource type="Texture2D" uid="uid://bjk54d7mosliq" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/cherry/cherry-4.png" id="4_ih2vm"]
+[ext_resource type="Texture2D" uid="uid://c3pm2yblviv05" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/cherry/cherry-5.png" id="5_8gpnt"]
+[ext_resource type="Texture2D" uid="uid://dqcf5uum1cjlv" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/cherry/cherry-6.png" id="6_f0xcb"]
+[ext_resource type="Texture2D" uid="uid://bcdr8jfmvj70r" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/cherry/cherry-7.png" id="7_gtdaq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vqr1t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fs51t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_206o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2lmrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vqdhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ih2vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8gpnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f0xcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gtdaq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_bxgtl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ybqs3"]
+resource_name = "idle"
+length = 0.65
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yuxks"]
+_data = {
+"RESET": SubResource("Animation_bxgtl"),
+"idle": SubResource("Animation_ybqs3")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_knmk3"]
+radius = 1317.91
+
+[node name="Cherry" type="Area2D"]
+script = ExtResource("1_mifkd")
+
+[node name="pickup" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vqr1t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5.25, 3.25)
+scale = Vector2(1.5, 1.30952)
+sprite_frames = SubResource("SpriteFrames_fs51t")
+animation = &"idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_yuxks")
+}
+
+[node name="idle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="idle"]
+visible = false
+shape = SubResource("CircleShape2D_knmk3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="idle" to="." method="_on_idle_body_entered"]

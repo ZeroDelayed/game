@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://d2andwa1uhybp"]
+
+[ext_resource type="Texture2D" uid="uid://patrq27oas86" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/spritesheets/frog-idle.png" id="1_gaegl"]
+[ext_resource type="Texture2D" uid="uid://dyj16rwuioyy0" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/spritesheets/frog-jump.png" id="2_0b60m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_muqlx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52b8o"]
+atlas = ExtResource("1_gaegl")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_och61"]
+atlas = ExtResource("1_gaegl")
+region = Rect2(35, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbgj7"]
+atlas = ExtResource("1_gaegl")
+region = Rect2(70, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls2vd"]
+atlas = ExtResource("1_gaegl")
+region = Rect2(105, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk6cb"]
+atlas = ExtResource("2_0b60m")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nc0a"]
+atlas = ExtResource("2_0b60m")
+region = Rect2(35, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu1jy"]
+atlas = ExtResource("2_0b60m")
+region = Rect2(70, 0, 35, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7feq8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52b8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_och61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbgj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls2vd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk6cb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nc0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu1jy")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_muqlx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -13)
+sprite_frames = SubResource("SpriteFrames_7feq8")
+animation = &"idle"

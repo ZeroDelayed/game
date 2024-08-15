@@ -1,0 +1,262 @@
+[gd_scene load_steps=32 format=3 uid="uid://cnutycur0qqsj"]
+
+[ext_resource type="Texture2D" uid="uid://bs6itqjgx238t" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/taunting/_0000_Layer-1.png" id="1_5pr4m"]
+[ext_resource type="Script" path="res://enemies/toad.gd" id="1_iwjdv"]
+[ext_resource type="Texture2D" uid="uid://calqnlnrrds5r" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/enemy-death/enemy-death-1.png" id="2_1jogi"]
+[ext_resource type="Texture2D" uid="uid://w86r7jw8ul86" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/taunting/_0001_Layer-2.png" id="2_skrui"]
+[ext_resource type="Texture2D" uid="uid://cdm54htefg5tb" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/enemy-death/enemy-death-2.png" id="3_lyexb"]
+[ext_resource type="Texture2D" uid="uid://cj8u86lfij81r" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/taunting/_0002_Layer-3.png" id="3_xxhew"]
+[ext_resource type="Texture2D" uid="uid://bojs7wdio0tx" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/enemy-death/enemy-death-3.png" id="4_bsnli"]
+[ext_resource type="Texture2D" uid="uid://cdai1vqdu34g4" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/taunting/_0003_Layer-4.png" id="4_quihh"]
+[ext_resource type="Texture2D" uid="uid://b7hg8avbkpfpa" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/walking/_0000_Layer-1.png" id="5_4j7o2"]
+[ext_resource type="Texture2D" uid="uid://dpvtighosani3" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/enemy-death/enemy-death-4.png" id="5_sqi2a"]
+[ext_resource type="Texture2D" uid="uid://3d6uip5pw37b" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/walking/_0001_Layer-2.png" id="6_rtfnb"]
+[ext_resource type="Texture2D" uid="uid://da85xiu0h4nbn" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/enemy-death/enemy-death-5.png" id="6_wyxah"]
+[ext_resource type="Texture2D" uid="uid://bkjix8j14alb7" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/walking/_0002_Layer-3.png" id="7_5cxy0"]
+[ext_resource type="Texture2D" uid="uid://bykpie0oo5jtj" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/sprites/enemy-death/enemy-death-6.png" id="7_mgdpk"]
+[ext_resource type="Texture2D" uid="uid://cflkff5fwpodf" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/walking/_0003_Layer-4.png" id="8_pa4o2"]
+[ext_resource type="Texture2D" uid="uid://riwf1tyygd2i" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/walking/_0004_Layer-5.png" id="9_knpej"]
+[ext_resource type="Texture2D" uid="uid://bngoo01dt2lw4" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/walking/_0005_Layer-6.png" id="10_g21wv"]
+[ext_resource type="Texture2D" uid="uid://coh21q5nt7p7" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/walking/_0006_Layer-7.png" id="11_mfijp"]
+[ext_resource type="Texture2D" uid="uid://dgifqtpvguynw" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/walking/_0007_Layer-8.png" id="12_tl462"]
+[ext_resource type="Texture2D" uid="uid://c6076paftqvu3" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/walking/_0008_Layer-9.png" id="13_vqjqv"]
+[ext_resource type="Texture2D" uid="uid://dol1ijaoo5e2t" path="res://Sunny Land Collection Files/Assets/Characters/sunny-froggy/Sprites/walking/_0009_Layer-10.png" id="14_7xoor"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7jv6j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3iuux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1jogi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lyexb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bsnli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sqi2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wyxah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mgdpk")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5pr4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_skrui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xxhew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_quihh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_4j7o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rtfnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5cxy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pa4o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_knpej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g21wv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mfijp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tl462")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vqjqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7xoor")
+}],
+"loop": true,
+"name": &"movement",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_64oaw"]
+resource_name = "idle"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_o76r2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_jrcnj"]
+resource_name = "movement"
+length = 0.95
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"movement"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_ruaj0"]
+resource_name = "death"
+length = 0.55
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wypt6"]
+_data = {
+"RESET": SubResource("Animation_o76r2"),
+"death": SubResource("Animation_ruaj0"),
+"idle": SubResource("Animation_64oaw"),
+"movement": SubResource("Animation_jrcnj")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s3fo"]
+size = Vector2(20, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csg6c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d7ovp"]
+radius = 103.175
+
+[node name="toad" type="CharacterBody2D"]
+script = ExtResource("1_iwjdv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7jv6j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -6)
+sprite_frames = SubResource("SpriteFrames_3iuux")
+animation = &"idle"
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_wypt6")
+}
+
+[node name="toad death" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toad death"]
+position = Vector2(1, -11)
+shape = SubResource("RectangleShape2D_5s3fo")
+
+[node name="player death" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player death"]
+visible = false
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_csg6c")
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+position = Vector2(-2, -1)
+
+[node name="player detection" type="CollisionShape2D" parent="PlayerDetection"]
+visible = false
+position = Vector2(4, 2)
+shape = SubResource("CircleShape2D_d7ovp")
+
+[connection signal="body_entered" from="toad death" to="." method="_on_toad_death_body_entered"]
+[connection signal="body_entered" from="player death" to="." method="_on_player_death_body_entered"]
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

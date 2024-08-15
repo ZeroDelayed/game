@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://k6ghasv8bxj2"]
+
+[ext_resource type="Texture2D" uid="uid://2ajjk4m4qafw" path="res://Sunny Land Collection Files/Assets/Packs/Winter Pack/ENVIRONMENT/Background/mountains.png" id="1_7yyw7"]
+[ext_resource type="Script" path="res://parallax_background.gd" id="1_woq5w"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_woq5w")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(2027, 0)
+
+[node name="Mountains" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(370, 1085)
+scale = Vector2(9.74519, 4.50993)
+texture = ExtResource("1_7yyw7")

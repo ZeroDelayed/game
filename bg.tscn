@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://cuwvhg15g5ki5"]
+
+[ext_resource type="Texture2D" uid="uid://denfjom3ekc0d" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/environment/Background/back.png" id="1_0ntk6"]
+[ext_resource type="Script" path="res://bg.gd" id="1_c8ar5"]
+[ext_resource type="Texture2D" uid="uid://b5q6fa22em1kt" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/environment/Background/middle.png" id="2_e7g0p"]
+[ext_resource type="Texture2D" uid="uid://b3k03nbosmcr4" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/environment/Props/house.png" id="3_x0gjs"]
+[ext_resource type="Texture2D" uid="uid://ncg2ew4k3rpj" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/environment/Props/plant-house.png" id="4_qv58u"]
+[ext_resource type="Texture2D" uid="uid://bqfgbp5nvgnls" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/environment/Props/tree-house.png" id="5_w5em4"]
+[ext_resource type="Texture2D" uid="uid://dx8ee1oik0n4" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/environment/Props/wooden-house.png" id="6_mgkb3"]
+[ext_resource type="Texture2D" uid="uid://81vmf713u26t" path="res://Sunny Land Collection Files/Assets/Packs/Sunnyland/environment/Props/straw-house.png" id="7_n1hur"]
+
+[node name="BG" type="ParallaxBackground"]
+script = ExtResource("1_c8ar5")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1049, 0)
+
+[node name="Back" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(531, 340)
+scale = Vector2(2.75, 2.8125)
+texture = ExtResource("1_0ntk6")
+
+[node name="House" type="Sprite2D" parent="ParallaxLayer/Back"]
+position = Vector2(-178.182, 2.84444)
+scale = Vector2(0.363636, 0.355556)
+texture = ExtResource("3_x0gjs")
+
+[node name="Plant-house" type="Sprite2D" parent="ParallaxLayer/Back"]
+position = Vector2(-68.7273, 5.33334)
+scale = Vector2(0.363636, 0.355556)
+texture = ExtResource("4_qv58u")
+
+[node name="Tree-house" type="Sprite2D" parent="ParallaxLayer/Back"]
+position = Vector2(-2.54546, -0.711113)
+scale = Vector2(0.363636, 0.355556)
+texture = ExtResource("5_w5em4")
+
+[node name="Wooden-house" type="Sprite2D" parent="ParallaxLayer/Back"]
+position = Vector2(67.6364, 7.46667)
+scale = Vector2(0.363636, 0.355556)
+texture = ExtResource("6_mgkb3")
+
+[node name="Straw-house" type="Sprite2D" parent="ParallaxLayer/Back"]
+position = Vector2(129.091, 4.62222)
+scale = Vector2(0.363636, 0.355556)
+texture = ExtResource("7_n1hur")
+
+[node name="Middle" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(91, 491)
+texture = ExtResource("2_e7g0p")
+
+[node name="Middle" type="Sprite2D" parent="ParallaxLayer/Middle"]
+position = Vector2(176, -1)
+texture = ExtResource("2_e7g0p")
+
+[node name="Middle2" type="Sprite2D" parent="ParallaxLayer/Middle"]
+position = Vector2(349, -2)
+texture = ExtResource("2_e7g0p")
+
+[node name="Middle" type="Sprite2D" parent="ParallaxLayer/Middle/Middle2"]
+position = Vector2(176, 0)
+texture = ExtResource("2_e7g0p")
+
+[node name="Middle" type="Sprite2D" parent="ParallaxLayer/Middle/Middle2/Middle"]
+position = Vector2(175, 0)
+texture = ExtResource("2_e7g0p")
+
+[node name="Middle" type="Sprite2D" parent="ParallaxLayer/Middle/Middle2/Middle/Middle"]
+position = Vector2(176, 7)
+texture = ExtResource("2_e7g0p")

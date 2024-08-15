@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1w35ktkf5ytl"]
+
+[ext_resource type="Script" path="res://worlds/game_won.gd" id="1_neseo"]
+[ext_resource type="PackedScene" uid="uid://cuwvhg15g5ki5" path="res://bg.tscn" id="2_mqpct"]
+
+[node name="Game_won" type="Node2D"]
+script = ExtResource("1_neseo")
+
+[node name="BG" parent="." instance=ExtResource("2_mqpct")]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 508.0
+offset_top = 82.0
+offset_right = 700.0
+offset_bottom = 176.0
+text = "
+            GAME WON"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 498.0
+offset_top = 342.0
+offset_right = 725.0
+offset_bottom = 408.0
+text = "quit
+"
+
+[connection signal="pressed" from="quit" to="." method="_on_menu_pressed"]
